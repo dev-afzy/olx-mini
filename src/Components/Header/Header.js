@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Header.scss';
@@ -41,7 +41,9 @@ function Header() {
     <div className="headerParentDiv">
       <div className="headerChildDiv">
         <div className="brandName">
-          <OlxLogo></OlxLogo>
+          <Link to="/">
+            <OlxLogo></OlxLogo>
+          </Link>
         </div>
         <div className="placeSearch">
           <Search></Search>
@@ -68,18 +70,24 @@ function Header() {
             name
           ) : (
             <Link to="/login">
-              <span>Login</span>
+              <span className="login">LOGIN</span>
             </Link>
           )}
         </div>
 
-        <div className="sellMenu">
-          <SellButton></SellButton>
-          <div className="sellMenuContent">
-            <SellButtonPlus></SellButtonPlus>
-            <span>SELL</span>
+        {user?.displayName ? (
+          <div className="sellMenu">
+            <Link to="/create">
+              <SellButton></SellButton>
+              <div className="sellMenuContent">
+                <SellButtonPlus></SellButtonPlus>
+                <span>SELL</span>
+              </div>
+            </Link>
           </div>
-        </div>
+        ) : (
+          ''
+        )}
       </div>
     </div>
   );

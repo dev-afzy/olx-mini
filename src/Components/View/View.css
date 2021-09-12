@@ -3,12 +3,12 @@
   display: flex;
 }
 .viewParentDiv .imageShowDiv {
-  padding: 16px;
-  width: 70vw;
+  padding: 25px 50px;
+  width: 65vw;
 }
 .viewParentDiv .imageShowDiv img {
-  width: 65vw;
-  height: 85vh;
+  width: 55vw;
+  height: 75vh;
 }
 
 .viewParentDiv .rightSection {
@@ -24,6 +24,7 @@
   font-size: 34px;
   line-height: 32px;
   margin-bottom: 20px;
+  padding: 10px;
 }
 
 .viewParentDiv .rightSection .productDetails {
